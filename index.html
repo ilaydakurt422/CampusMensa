@@ -1,154 +1,294 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>CampusMensa</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
+    <h1>Willkommen bei CampusMensa</h1>
 
-        <h1>Willkommen bei CampusMensa</h1>
-    
-        <p>Wähle dein Mensa-Menü und bestelle es vor.</p>
-    
-        <h2>1. Wähle deine Mensa</h2>
-    
-        <label>
-            <input type="radio" name="mensa" value="campus">
-            Mensa Campus
-        </label>
-    
-        <br>
-    
-        <label>
-            <input type="radio" name="mensa" value="hauptgebaeude">
-            Mensa Hauptgebäude
-        </label>
-    
-        <br>
-    
-        <label>
-            <input type="radio" name="mensa" value="cafeteria">
-            Cafeteria
-        </label>   
-        <h2>2. Wähle dein Menü</h2>
+    <p>Wähle dein Mensa-Menü und bestelle es vor.</p>
 
-        <div class="menu-karte">
-        
-            <h3>🍝 Spaghetti Bolognese</h3>
-            <p>Spaghetti mit Bolognesesoße und Salat</p>
-            <p class="preis">4,50 €</p>
-        
-            <label>
-                <input type="radio" name="menu" value="spaghetti">
-                Dieses Menü auswählen
-            </label>
-        
-        </div>
-        
-        <div class="menu-karte">
-        
-            <h3>🥗 Gemüse-Curry</h3>
-            <p>Gemüse-Curry mit Reis</p>
-            <p class="preis">4,00 €</p>
-        
-            <label>
-                <input type="radio" name="menu" value="curry">
-                Dieses Menü auswählen
-            </label>
-        
-        </div>
-        
-        <div class="menu-karte">
-        
-            <h3>🍕 Pizza Diavolo </h3>
-            <p>Pizza mit Tomatensoße und Mozzarella</p>
-            <p class="preis">3,50 €</p>
-        
-            <label>
-                <input type="radio" name="menu" value="pizza">
-                Dieses Menü auswählen
-            </label>
-        
-        </div>
+
+    <h2>1. Wähle deine Mensa</h2>
+
+    <label>
+        <input type="radio" name="mensa" value="campus">
+        Mensa Campus
+    </label>
+
+    <br>
+
+    <label>
+        <input type="radio" name="mensa" value="hauptgebaeude">
+        Mensa Hauptgebäude
+    </label>
+
+    <br>
+
+    <label>
+        <input type="radio" name="mensa" value="cafeteria">
+        Cafeteria
+    </label>
+
+
+
+    <h2>2. Wähle dein Menü</h2>
+
+
+    <div class="menu-karte">
+
+        <h3>🍝 Spaghetti Bolognese</h3>
+
+        <p>
+            Spaghetti mit Bolognesesoße und Salat
+        </p>
+
+        <p class="preis">
+            4,50 €
+        </p>
+
+        <label>
+            <input type="radio" name="menu" value="spaghetti">
+            Dieses Menü auswählen
+        </label>
+
+    </div>
+
+
+
+    <div class="menu-karte">
+
+        <h3>🥗 Gemüse-Curry</h3>
+
+        <p>
+            Gemüse-Curry mit Reis
+        </p>
+
+        <p class="preis">
+            4,00 €
+        </p>
+
+        <label>
+            <input type="radio" name="menu" value="curry">
+            Dieses Menü auswählen
+        </label>
+
+    </div>
+
+
+
+    <div class="menu-karte">
+
+        <h3>🌶️ Pizza Diavolo</h3>
+
+        <p>
+            Pizza mit Tomatensoße, Mozzarella und scharfer Salami
+        </p>
+
+        <p class="preis">
+            3,50 €
+        </p>
+
         <label>
             <input type="radio" name="menu" value="pizza">
             Dieses Menü auswählen
         </label>
-        <h2>3. Wähle deine Abholzeit</h2>
 
-<label for="abholzeit">Wann möchtest du dein Essen abholen?</label>
+    </div>
 
-<select id="abholzeit" name="abholzeit">
-    <option value="">Bitte auswählen</option>
-    <option value="11:30-11:45">11:30 – 11:45 Uhr</option>
-    <option value="11:45-12:00">11:45 – 12:00 Uhr</option>
-    <option value="12:00-12:15">12:00 – 12:15 Uhr</option>
-    <option value="12:15-12:30">12:15 – 12:30 Uhr</option>
-</select>
-<h2>4. Möchtest du noch etwas dazu?</h2>
 
-<label>
-    <input type="checkbox" name="zusatz" value="getraenk">
-    🥤 Getränk (+1,50 €)
-</label>
 
-<br>
+    <h2>3. Wähle deine Abholzeit</h2>
 
-<label>
-    <input type="checkbox" name="zusatz" value="salat">
-    🥗 Salat (+1,00 €)
-</label>
+    <label for="abholzeit">
+        Wann möchtest du dein Essen abholen?
+    </label>
 
-<br>
 
-<label>
-    <input type="checkbox" name="zusatz" value="dessert">
-    🍰 Dessert (+1,50 €)
-</label>
+    <select
+        id="abholzeit"
+        name="abholzeit"
+        required
+    >
 
-<br>
+        <option value="" disabled selected>
+            Bitte Abholzeit auswählen
+        </option>
 
-<label>
-    <input type="checkbox" name="zusatz" value="keine">
-    Keine Zusatzoption
-</label>
-<div id="zahlungBereich" style="display: none;">
+        <option value="11:30-11:45">
+            11:30 – 11:45 Uhr
+        </option>
 
-    <h2>5. Zahlungsart</h2>
+        <option value="11:45-12:00">
+            11:45 – 12:00 Uhr
+        </option>
+
+        <option value="12:00-12:15">
+            12:00 – 12:15 Uhr
+        </option>
+
+        <option value="12:15-12:30">
+            12:15 – 12:30 Uhr
+        </option>
+
+    </select>
+
+
+
+    <h2>4. Möchtest du noch etwas dazu?</h2>
+
 
     <label>
-        <input type="radio" name="zahlung" value="karte">
-        💳 Karte
+        <input
+            type="checkbox"
+            name="zusatz"
+            value="getraenk"
+        >
+
+        🥤 Getränk (+1,50 €)
     </label>
 
     <br>
 
+
     <label>
-        <input type="radio" name="zahlung" value="app">
-        📱 Mensa-App
+        <input
+            type="checkbox"
+            name="zusatz"
+            value="salat"
+        >
+
+        🥗 Salat (+1,00 €)
     </label>
 
     <br>
 
+
     <label>
-        <input type="radio" name="zahlung" value="bar">
-        💶 Barzahlung
+        <input
+            type="checkbox"
+            name="zusatz"
+            value="dessert"
+        >
+
+        🍰 Dessert (+1,50 €)
     </label>
 
-</div>
-<h2>6. Bestellung abschließen</h2>
+    <br>
 
-<button type="button" id="bestellenButton">
-    Bestellung vorbestellen
-</button>
 
-<div id="bestaetigung"></div>
+    <label>
+        <input
+            type="checkbox"
+            name="zusatz"
+            value="keine"
+        >
 
-<script src="script.js"></script>
+        Keine Zusatzoption
+    </label>
+
+
+
+    <div
+        id="zahlungBereich"
+        style="display: none;"
+    >
+
+        <h2>5. Zahlungsart</h2>
+
+
+        <label>
+            <input
+                type="radio"
+                name="zahlung"
+                value="karte"
+            >
+
+            💳 Karte
+        </label>
+
+        <br>
+
+
+        <label>
+            <input
+                type="radio"
+                name="zahlung"
+                value="app"
+            >
+
+            📱 Mensa-App
+        </label>
+
+        <br>
+
+
+        <label>
+            <input
+                type="radio"
+                name="zahlung"
+                value="bar"
+            >
+
+            💶 Barzahlung
+        </label>
+
+    </div>
+
+
+
+    <h2>6. Deine Angaben</h2>
+
+
+    <label for="nickname">
+        Nickname / Kürzel:
+    </label>
+
+
+    <input
+        type="text"
+        id="nickname"
+        name="nickname"
+        placeholder="z. B. LK23"
+        maxlength="20"
+    >
+
+
+    <p>
+        Dein Nickname wird für die Zuordnung deiner Bestellung verwendet.
+    </p>
+
+
+
+    <h2>7. Bestellung abschließen</h2>
+
+
+    <button
+        type="button"
+        id="bestellenButton"
+    >
+
+        Bestellung vorbestellen
+
+    </button>
+
+
+
+    <div id="bestaetigung"></div>
+
+
+
+    <script src="script.js"></script>
+
 </body>
-</html>
 
+</html>
