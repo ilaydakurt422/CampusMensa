@@ -1,5 +1,6 @@
 const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxMRCyXAD0X2L0xUnRKwft5O5NgPBJ8PbB9dz-HyqBtwQY08EnDLc6onS57VSZEHkhx/exec";
 
+
 const menuDaten = {
     spaghetti: {
         name: "Spaghetti Bolognese",
@@ -10,10 +11,11 @@ const menuDaten = {
         preis: 4.00
     },
     pizza: {
-        name: "Pizza Margherita",
+        name: "Pizza Diavolo",
         preis: 3.50
     }
 };
+
 
 const zusatzDaten = {
     getraenk: {
@@ -29,6 +31,7 @@ const zusatzDaten = {
         preis: 1.50
     }
 };
+
 
 const button = document.getElementById("bestellenButton");
 const bestaetigung = document.getElementById("bestaetigung");
@@ -105,6 +108,10 @@ button.addEventListener("click", async function() {
         'input[name="zahlung"]:checked'
     );
 
+    const nickname = document.getElementById(
+        "nickname"
+    ).value.trim();
+
 
     // Pflichtfelder prüfen
 
@@ -126,6 +133,27 @@ button.addEventListener("click", async function() {
     if (!zahlung) {
         alert("Bitte wähle eine Zahlungsart aus.");
         return;
+    }
+
+    if (!nickname) {
+        alert("Bitte gib einen Nickname oder ein Kürzel ein.");
+        return;
+    }
+
+
+    // Abholcode erzeugen
+
+    const zeichen = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+
+    let abholcode = "";
+
+    for (let i = 0; i < 5; i++) {
+
+        const zufall = Math.floor(
+            Math.random() * zeichen.length
+        );
+
+        abholcode += zeichen[zufall];
     }
 
 
@@ -204,6 +232,16 @@ button.addEventListener("click", async function() {
         <h3>Deine Bestellung</h3>
 
         <p>
+            <strong>Nickname:</strong>
+            ${nickname}
+        </p>
+
+        <p>
+            <strong>Abholcode:</strong>
+            ${abholcode}
+        </p>
+
+        <p>
             <strong>Mensa:</strong>
             ${mensaName}
         </p>
@@ -240,12 +278,27 @@ button.addEventListener("click", async function() {
             Gesamtpreis:
             ${gesamtpreis.toFixed(2).replace(".", ",")} €
         </h3>
+
+        <p>
+            🔐 Bitte bewahre deinen Abholcode auf und zeige ihn
+            bei der Abholung vor.
+        </p>
     `;
+
+
+    // Automatisch zur Bestellbestätigung scrollen
+
+    bestaetigung.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 
 
     // Bestellung an Google Sheets senden
 
     const bestellung = {
+        nickname: nickname,
+        abholcode: abholcode,
         mensa: mensaName,
         menu: ausgewaehltesMenu.name,
         extras: zusatzNamen.length > 0
@@ -265,7 +318,9 @@ button.addEventListener("click", async function() {
             body: JSON.stringify(bestellung)
         });
 
-        console.log("Bestellung wurde an Google Sheets gesendet.");
+        console.log(
+            "Bestellung wurde an Google Sheets gesendet."
+        );
 
     } catch (fehler) {
 
