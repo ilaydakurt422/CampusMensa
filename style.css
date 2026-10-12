@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    background: #f4f7f6;
+    color: #222;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+
+body > p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+h2 {
+    margin-top: 35px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #ddd;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+/* Menü-Karten */
+
+.menu-karte {
+    background: white;
+    padding: 22px;
+    margin: 15px 0;
+    border-radius: 14px;
+    border: 1px solid #ddd;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.menu-karte:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+}
+
+.menu-karte h3 {
+    font-size: 21px;
+}
+
+.menu-karte .preis {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+/* Eingaben */
+
+label {
+    display: inline-block;
+    margin: 7px 0;
+    cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(1.1);
+}
+
+select {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: white;
+    font-size: 16px;
+}
+
+/* Zahlungsbereich */
+
+#zahlungBereich {
+    background: white;
+    padding: 20px;
+    margin-top: 25px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+}
+
+/* Bestellbutton */
+
+button {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 30px;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 9px;
+    background: #2e7d32;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #256628;
+}
+
+/* Bestätigung */
+
+#bestaetigung {
+    display: none;
+    margin-top: 30px;
+    padding: 25px;
+    background: white;
+    border-radius: 14px;
+    border: 2px solid #2e7d32;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+#bestaetigung.anzeigen {
+    display: block;
+}
+
+#bestaetigung h2 {
+    color: #2e7d32;
+    border-bottom: none;
+}
+
+/* Handy-Darstellung */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 15px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    .menu-karte {
+        padding: 18px;
+    }
+
+    button {
+        max-width: none;
+    }
+}
